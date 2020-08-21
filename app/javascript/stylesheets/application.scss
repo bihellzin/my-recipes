@@ -1,1 +1,43 @@
 @import './bootstrap_custom.scss';
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #e5e5e5;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #e5e5e5;
+  text-decoration: none;
+}
+
+.jumbotron {
+  margin-top: 50px;
+  background-size: cover;
+  height: 600px;
+  background-image: url('../../assets/images/kitchen.jpeg');
+
+  > h1, h2 {
+    color: #303030;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+    font-weight: bold;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.btn-xlarge {
+  background-color: #28a745;
+  border-color: #28a745;
+
+  &:hover {
+    background-color: #125522;
+    border-color: #125522;
+  }
+}
