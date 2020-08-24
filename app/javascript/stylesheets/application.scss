@@ -41,3 +41,12 @@
     border-color: #125522;
   }
 }
+
+.footer {
+  border-top: solid 1px;
+  background-color: #343a40;
+
+  > .container p {
+    color: #e5e5e5
+  }
+}
