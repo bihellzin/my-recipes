@@ -1,5 +1,13 @@
 @import './bootstrap_custom.scss';
 
+* {
+  box-sizing: border-box;
+}
+
+.navbar {
+  margin-bottom: 50px;
+}
+
 #logo {
   float: left;
   font-size: 1.7em;
@@ -15,7 +23,6 @@
 }
 
 .jumbotron {
-  margin-top: 50px;
   background-size: cover;
   height: 600px;
   background-image: url('../../assets/images/kitchen.jpeg');
@@ -48,5 +55,18 @@
 
   > .container p {
     color: #e5e5e5
+  }
+}
+
+.well {
+  background-color: #f4f4f4;
+  margin-bottom: 30px;
+  border-color: #ebebeb;
+  border-style: solid;
+  border-radius: 5px;
+  padding-top: 20px;
+
+  > h4 {
+    font-weight: bold;
   }
 }
