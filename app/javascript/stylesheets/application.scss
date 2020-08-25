@@ -58,15 +58,26 @@
   }
 }
 
-.well {
-  background-color: #f4f4f4;
+.card {
   margin-bottom: 30px;
-  border-color: #ebebeb;
-  border-style: solid;
-  border-radius: 5px;
-  padding-top: 20px;
 
   > h4 {
-    font-weight: bold;
+    margin-top: 10px;
   }
+}
+
+.title-center {
+  text-align: center;
+}
+
+.recipe-name {
+  font-weight: bold;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+.chef-pic {
+  margin-top: 20px;
 }
