@@ -9,5 +9,17 @@
     <p>
       <small><%= time_ago_in_words(@recipe.created_at) %> ago</small>
     </p>
+    <p>
+      <small>
+        <%= link_to 'Edit this recipe', edit_recipe_path(@recipe) %>
+      </small>
+    </p>
+    <p>
+      <small>
+        <%= link_to 'Delete this recipe', recipe_path(@recipe), method: :delete,
+                                          data: {confirm: 'Are you sure ?'}
+        %>
+      </small>
+    </p>
   </div>
 </div>
