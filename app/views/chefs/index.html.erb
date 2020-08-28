@@ -20,6 +20,10 @@
               <small><%= pluralize(chef.recipes.count, 'recipe') if chef.recipes.count > 0 %></small>
             </p>
           </li>
+          <li>
+            <%= link_to 'Delete this chef', chef_path(chef), method: :delete,
+            data: {confirm: 'Are you sure ?'} %>
+          </li>
         </div>
       </div>
     </ul>

@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ChefTest < ActiveSupport::TestCase
   def setup
-    @chef = Chef.new(chefname: 'gabriel', email: 'example@test.com', 
+    @chef = Chef.new(chefname: 'gabriel', email: 'example@test.com',
                      password: 'password', password_confirmation: 'password')
   end
 
@@ -68,5 +68,13 @@ class ChefTest < ActiveSupport::TestCase
   test 'password should be at least 8 characters' do
     @chef.password = @chef.password_confirmation = 'a' * 7
     assert_not @chef.valid?
+  end
+
+  test 'recipes should be deleted' do
+    @chef.save
+    @chef.recipes.create!(name: 'test', description: 'teste ')
+    assert_difference 'Recipe.count', -1 do
+      @chef.destroy
+    end
   end
 end
