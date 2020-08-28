@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper_method :current, :logged_in?
+  helper_method :current_chef, :logged_in?
 
   def current_chef
     @current_chef ||= Chef.find(session[:chef_id]) if session[:chef_id]
