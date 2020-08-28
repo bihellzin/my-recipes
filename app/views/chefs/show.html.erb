@@ -6,4 +6,10 @@
 </div>
 
 <h4>Chef <%= @chef.chefname.capitalize %>'s Recipes</h4>
-<%= render 'recipes/recipe', obj: @chef.recipes %>
+<div aling="center">
+  <%= will_paginate @chef_recipes %>
+</div>
+<%= render 'recipes/recipe', obj: @chef_recipes %>
+<div aling="center">
+  <%= will_paginate @chef_recipes %>
+</div>
