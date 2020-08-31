@@ -18,7 +18,7 @@ class ChefsIndexTest < ActionDispatch::IntegrationTest
     get chefs_path
     assert_template 'chefs/index'
     assert_difference 'Chef.count', -1 do
-      delete chef_path(@chef)
+      delete chef_path(Chef.first)
     end
     assert_redirected_to chefs_path
     assert_not flash.empty?
