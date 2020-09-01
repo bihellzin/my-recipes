@@ -4,6 +4,8 @@ class ChefsIndexTest < ActionDispatch::IntegrationTest
   def setup
     @chef = Chef.create!(chefname: 'test', email: 'a@a.com', password: 'asdfasdf',
                          password_confirmation: 'asdfasdf')
+    @admin_user = Chef.create!(chefname: 'john', email: 'john1@example.com', password: 'password',
+                               password_confirmation: 'password', admin: true)
   end
 
   test 'should get index page' do
@@ -14,11 +16,11 @@ class ChefsIndexTest < ActionDispatch::IntegrationTest
   end
 
   test 'should delete chef' do
-    sign_in_as(@chef, 'asdfasdf')
+    sign_in_as(@admin_user, 'password')
     get chefs_path
     assert_template 'chefs/index'
     assert_difference 'Chef.count', -1 do
-      delete chef_path(Chef.first)
+      delete chef_path(@chef)
     end
     assert_redirected_to chefs_path
     assert_not flash.empty?

@@ -59,13 +59,14 @@ class ChefsController < ApplicationController
   def require_same_user
     if current_chef != @chef && !current_chef.admin?
       flash[:danger] = 'You can only edit or delete your own recipes'
-      redirect_to recipes_path
+      redirect_to chefs_path
     end
   end
 
   def require_admin
-    if logged_in? && !current_chef.admin?
+    if logged_in? and !current_chef.admin?
       flash[:danger] = 'You cannot perform this action'
+      redirect_to root_path
     end
   end
 end
