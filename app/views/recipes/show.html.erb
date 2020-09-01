@@ -3,6 +3,9 @@
 <div class="card card-body bg-light col-md-offset-2">
   <h4 class="title-center">Steps</h4>
   <p><%= simple_format(@recipe.description) %></p>
+  <% if @recipe.ingredients.any? %>
+    <p><small>Ingredients: <%= render @recipe.ingredients %></small></p>  
+  <% end %>
   <p><small>Created by <%= @recipe.chef.chefname.capitalize %></small></p>
   <div class="float-right">
     <%= link_to gravatar_for(@recipe.chef), chef_path(@recipe.chef) %>

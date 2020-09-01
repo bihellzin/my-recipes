@@ -23,8 +23,19 @@
           <% end %>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Ingredients
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-item"><%= link_to 'All ingredients', ingredients_path %></div>
+          <% Ingredient.all.each do |ing| %>
+            <div class="dropdown-item"><%= link_to ing.name.capitalize, ingredient_path(ing) %></div>
+          <% end %>
+          <% if logged_in? %>
+            <div class="dropdown-item"><%= link_to 'Add new ingredient', new_ingredient_path %></div>
+          <% end %>
+        </div>
       </li>
     </ul>
     <ul class="navbar-nav mr-auto">

@@ -9,7 +9,10 @@
     <div class="col-md-8 card card-body bg-light">
       <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
       <p><%= truncate(recipe.description, length: 150) %></p>
-      <p><small>Created <%= time_ago_in_words(recipe.created_at) %> ago</small></p>
+      <% if recipe.ingredients.any? %>
+        <p><small>Ingredients: <%= render recipe.ingredients %></small></p>
+      <% end %>
+      <p><small>Created <%= time_ago_in_words(recipe.created_at) %> ago by chef <%= recipe.chef.chefname.capitalize %></small></p>
       <% if logged_in? && (current_chef == recipe.chef || current_chef.admin?) %>
         <p>
           <small>
