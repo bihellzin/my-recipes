@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-2">
+    <section class="chef_info center">
+      <%= gravatar_for(comment.chef, size: 60) %>
+    </section>
+  </div>
+  <div class="col-md-8 card">
+    <h5><%= comment.chef.chefname %></h5>
+    <p><%= comment.description %></p>
+    <p>
+      <span class="quiet"><small>Created <%= time_ago_in_words(comment.created_at) %> ago</small></span>
+    </p>
+  </div>
+</div>
